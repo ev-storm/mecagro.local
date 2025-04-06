@@ -11,6 +11,7 @@
 	<script defer src="/js/obj.js"></script>
 	<script defer src="/js/svg.js"></script>
 	<script defer src="/js/swiper.js"></script>
+	<script defer src="/js/catalog.js"></script>
 	<!------------------- INPUT_MASK -------------------------->
 	<script src="/js/inputmask.min.js"></script>
 	<script src="/js/just-validate3.3.3.min.js"></script>

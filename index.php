@@ -2,8 +2,8 @@
 	<?php include "components/head.php"?>
 
 	<style>
-			.main_list-1::before {
-				transform: scaleX(1);
+			.menu-ul li:nth-child(1) a{
+				color: #58c88a!important;
 			}
 	</style>
 

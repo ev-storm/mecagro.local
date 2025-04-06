@@ -1,0 +1,252 @@
+	<title>mecagro | Каталог</title>
+	<?php include "../components/head.php"?>
+
+	<style>
+			.catalog-btn{
+				color: #ffffff99!important;
+			}
+	</style>
+
+<body>
+	<?php include "../components/menu.php"?>
+
+	<?php include "../components/modal.php"?>
+
+	<div class="container">
+		<div class="catalog-vue">
+			<div class="categories-con">
+					<ul class="filter-categories">
+						<li><h2>Бренды <span class="brend-tip"></span></h2>
+							<ul>
+								<li class="categories-brand active"><h2>MECARGO</h2></li>
+								<li><h2>|</h2></li>
+								<li class="categories-brand active"><h2>BARGAM</h2></li>
+								<li><h2>|</h2></li>
+								<li class="categories-brand active"><h2>MOSH</h2></li>
+							</ul>
+						</li>
+						<li><h2>Популярные</h2></li>
+						<li><h2>Новинки</h2></li>
+					</ul>
+					<div class="categories-margin"></div>
+					<ul class="main-categories">
+						<!-- <li>
+							<h2 class="open-img">Техника для полевых культур</h2>
+							<ul class="sub-catigories">
+								<li class="catigories-item">
+									<h2 class="open-img">Прицепные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									
+								<h2 class="open-img">Навесные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
+							</ul>
+						</li>
+						<li>
+							<h2 class="open-img">Техника для Садов</h2>
+							<ul class="sub-catigories">
+								<li class="catigories-item">
+									<h2 class="open-img">Прицепные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Навесные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
+							</ul>
+						</li>
+						<li>
+							<h2 class="open-img">Опрыскиватели</h2>
+							<ul class="sub-catigories">
+								<li class="catigories-item">
+									<h2 class="open-img">Прицепные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Навесные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
+							</ul>
+						</li>
+						<li>
+							<h2 class="open-img">Техника для виноградников</h2>
+							<ul class="sub-catigories">
+								<li class="catigories-item">
+									<h2 class="open-img">Прицепные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Навесные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
+							</ul>
+						</li>
+						<li>
+							<h2 class="open-img">Запасные части | Сервис</h2>
+							<ul class="sub-catigories">
+								<li class="catigories-item">
+									<h2 class="open-img">Прицепные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Навесные опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
+								</li>
+								<li class="catigories-item">
+									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
+							</ul>
+						</li> -->
+					</ul>
+			</div>
+			<div class="object-con">
+				<div class="object">
+					<div class="object-prevue">
+						<div class="swiper-con">
+							<div class="swiper object-swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide object-slide">
+										<img src="../assets/img/1.png" />
+									</div>
+									<div class="swiper-slide object-slide">
+										<img src="../assets/img/1.png" />
+									</div>
+									<div class="swiper-slide object-slide">
+										<img src="../assets/img/1.png" />
+									</div>
+									<div class="swiper-slide object-slide">
+										<img src="../assets/img/1.png" />
+								</div>
+								</div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
+							<div thumbsSlider="" class="swiper object-swiper_mini">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide object-slide_mini">
+										<img src="../assets/img/1.png" />
+									</div>
+									<div class="swiper-slide object-slide_mini">
+										<img src="../assets/img/1.png" />
+									</div>
+									<div class="swiper-slide object-slide_mini">
+										<img src="../assets/img/1.png" />
+								</div>
+								<div class="swiper-slide object-slide_mini">
+										<img src="../assets/img/1.png" />
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="object-btn">
+							<div>
+								<button class="btn">Получить консультацию</button>
+								<button class="btn-light">Лизинг</button>
+							</div>
+								<button class="btn-light pdf-down pdf-green">Скачать каталог	
+								</button>
+						</div>
+					</div>
+					<div class="object-descripcion-con">
+						<div class="green-line"></div>
+						<div class="object-descripcion">
+							<div class="object-categoty_main">
+								<h2>Категория: Опрыскиватели для многолетних насаждений</h2>
+							</div>
+							<div class="object-name_main">
+								<h1>Опрыскиватель вентиляторный SLV 1500/2000 FV</h1>
+							</div>
+							<div class="object-descripcion_main">
+								<h3 id="description">
+									Для химической защиты от вредителей и болезней многолетних насаждений садов высотой до 5 м, с шириной междурядий до 6 м и виноградников с шириной междурядий 2,5 м и более. Примененяется во всех зонах земледелия, за исключением участков с крутыми склонами (свыше 7°).
+									Машины для садов и виноградников
+									Агрегат для посадки винограда ASV•6•4000
+									Агрегат для внесения гранулированных удобрений MAI•4
+									Измельчитель веток TC•1.7
+									Тележка для контейнеров RP-2
+									Борона SUD•4
+									Рыхлитель вибрационный
+									Платформа садовая
+									Роторная косилка CRL•2.7
+									Мульчер ATM
+
+									Линия для производства комбикормов ANC•2000
+									Агрегат малогабаритный комбикормовый ANC•600
+									Дробилка самовсасывающая CC•5
+									Весовая платформа упаковочная
+									Дозатор шнековый фасовочный ADF•50
+									Вертикальная ножевая дробилка CN•1000
+									Смеситель горизонтальный лопастной
+									Агрегат для производства комбикормов ANC•1200
+
+									Оборудование для производства топливных брикет и пеллет
+									Вихревая аэродинамическая сушилка UAT
+									Измельчитель биомассы универсальный ТТU
+								</h3>
+								<button id="readMoreBtn" style="display: none;">Читать далее</button>
+							</div>
+						</div>
+					</div>
+					<div class="object-specifications">
+						<h1 class="object-specifications-title">Технические характеристики</h1>
+						<table class="object-specifications_table">
+							<tr class="object-specifications_table-title">
+									<th><h1>наименование характеристики</h1></th>
+									<th><h1>количество</h1></th>
+									<th><h1>Ед. изм.</h1></th>
+							</tr>
+							<tr>
+									<td><h1>Вместимость бака</h1></td>
+									<td><h1>1,0 / 1,5 / 2,0</h1></td>
+									<td><h1>м3</h1></td>
+							</tr>
+							<tr>
+									<td><h1>Расход рабочей жидкости</h1></td>
+									<td><h1>200 – 1000 </h1></td>
+									<td><h1>л/га</h1></td>
+							</tr>
+							<tr>
+									<td><h1>Транспортная скорость</h1></td>
+									<td><h1>20</h1></td>
+									<td><h1>км/ч</h1></td>
+							</tr>
+							<tr>
+									<td><h1>Число обслуживающего персонала</h1></td>
+									<td><h1>1</h1></td>
+									<td><h1>чел</h1></td>
+							</tr>
+							<tr>
+									<td><h1>Масса машины сухая, не более</h1></td>
+									<td><h1>600 / 800 / 900</h1></td>
+									<td><h1>кг</h1></td>
+							</tr>
+							
+					</table>
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
