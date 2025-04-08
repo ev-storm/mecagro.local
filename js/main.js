@@ -1,8 +1,40 @@
+//////////////////////-----------INPUT_OUTLINE------------//////////////////////////////
 const input = document.querySelector("input");
 
 input.addEventListener("focus", (event) => {
   event.target.style.outline = "none";
 });
+//////////////////////-----------INPUT_OUTLINE------------/////////////////////////////////
+
+//////////////////////-----------TIP_STATUS------------/////////////////////////////////
+const tipActive = () => {
+  const tip = document.querySelector(".tip");
+  let timeoutId; // Переменная для хранения идентификатора таймера
+
+  const observer = new MutationObserver((mutationsList) => {
+    for (let mutation of mutationsList) {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class"
+      ) {
+        if (tip.classList.contains("active")) {
+          // Очищаем предыдущий таймер
+          clearTimeout(timeoutId);
+
+          // Устанавливаем новый таймер
+          timeoutId = setTimeout(() => {
+            tip.classList.remove("active");
+          }, 2000);
+        }
+      }
+    }
+  });
+
+  observer.observe(tip, { attributes: true });
+};
+
+tipActive();
+//////////////////////-----------TIP_STATUS------------/////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
   const catalogBtn = document.querySelector(".catalog-btn");
@@ -37,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   subMenuCatalog.addEventListener("mouseleave", hideMenu);
 });
 
+//////////////////////////---------ABOUT-MENU-----/////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
   const aboutBtn = document.querySelector(".about-btn");
   const subAboutBtn = document.querySelector(".sub-about-btn");
@@ -69,13 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
   subAboutBtn.addEventListener("mouseenter", showMenu);
   subAboutBtn.addEventListener("mouseleave", hideMenu);
 });
-/////////////////////////////////////////////////////////////////////////////////
+//////////////////////////---------ABOUT-MENU-----///////////////////////////////////////////////////////
 // const toggleCategories = () => {
 //   const openItems = document.querySelectorAll(".open-img");
 
 //   openItems.forEach((item) => {
 //     item.addEventListener("click", () => {
-//       console.log("ok");
 //       const subcategories = item.nextElementSibling;
 //       const allSubcategories = document.querySelectorAll("ul.open, ul.close");
 
@@ -108,61 +140,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // toggleCategories();
 
-//////////////////////////////////////////////////////////
-const jsonCategoriesMenu = "../js/categories.json";
+//////////////////////--------MODAL--------//////////////////////////////
+const modalButtons = document.querySelectorAll(".btn-modal-call");
 
-const fetchDataCategoriesMenu = async () => {
-  try {
-    const response = await fetch(jsonCategoriesMenu);
-    if (!response.ok) {
-      throw new Error("Network response was not ok " + response.statusText);
+modalButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const modalCon = document.querySelector(".modal-con");
+    document.querySelector(".modal-con").classList.remove("hide-prev");
+    modalCon.classList.remove("hide");
+    modalCon.classList.add("show");
+  });
+});
+
+document
+  .querySelector(".modal-con")
+  .addEventListener("click", function (event) {
+    if (!event.target.closest(".modal")) {
+      document.querySelector(".modal-con").classList.remove("show");
+      document.querySelector(".modal-con").classList.add("hide");
     }
-    return await response.json();
-  } catch (error) {
-    console.error("Ошибка загрузки данных: ", error);
-  }
-};
+  });
 
-const createListMenu = async () => {
-  const dataCategoriesMenu = await fetchDataCategoriesMenu();
-  const menuContainer = document.querySelector(".menu-categories"); // Получаем контейнер для меню
-  menuContainer.innerHTML = ""; // Очищаем предыдущее содержимое
+document.querySelector(".close-modal").addEventListener("click", function () {
+  document.querySelector(".modal-con").classList.remove("show");
+  document.querySelector(".modal-con").classList.add("hide");
+});
 
-  // Перебираем категории
-  for (const [categoryName, categoryDetails] of Object.entries(
-    dataCategoriesMenu[0].categories
-  )) {
-    const categoryItem = document.createElement("li");
-    categoryItem.textContent = categoryName;
+//////////////////////--------MODAL--------//////////////////////////////
 
-    const subCategoryList = document.createElement("ul"); // Список для подкатегорий
-    subCategoryList.classList.add("menu-sub_categories");
+//////////////////////--------LANG-SWITCH--------//////////////////////////////
 
-    // Перебираем подкатегории
-    for (const [subCategoryName, subCategoryDetails] of Object.entries(
-      categoryDetails.subCategories
-    )) {
-      const subCategoryItem = document.createElement("li");
-      subCategoryItem.textContent = subCategoryName;
+const langSwitchActive = () => {
+  const langSwitch = document.querySelectorAll(".lang-switch");
 
-      const objectList = document.createElement("ul"); // Список для объектов
-      objectList.classList.add("menu-items");
+  langSwitch.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Удаляем класс "active" у всех элементов
+      langSwitch.forEach((i) => {
+        i.classList.remove("active");
+      });
+      // Добавляем класс "active" к текущему элементу
+      item.classList.add("active");
 
-      // Перебираем объекты в подкатегории
-      for (const object of subCategoryDetails.object) {
-        const objectItem = document.createElement("li");
-        objectItem.textContent = object;
-        objectList.appendChild(objectItem); // Добавляем объект в список объектов
+      const langValue = item.value;
+
+      // Изменяем содержание элемента с классом .tip
+      const tip = document.querySelector(".tip");
+      tip.classList.add("active");
+      if (langValue === "ru") {
+        tip.innerHTML = `<h3>Язык переключен на русский</h3>`;
+      } else {
+        tip.innerHTML = `<h3>The language has been switched <br>to еnglish</h3>`;
       }
-
-      subCategoryItem.appendChild(objectList); // Добавляем список объектов в подкатегорию
-      subCategoryList.appendChild(subCategoryItem); // Добавляем подкатегорию в список подкатегорий
-    }
-
-    categoryItem.appendChild(subCategoryList); // Добавляем список подкатегорий в категорию
-    menuContainer.appendChild(categoryItem); // Добавляем категорию в меню
-  }
+    });
+  });
 };
 
-// Запускаем функцию создания списка
-createListMenu();
+// Вызываем функцию для инициализации
+langSwitchActive();
+//////////////////////--------LANG-SWITCH--------//////////////////////////////

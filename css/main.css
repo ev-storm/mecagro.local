@@ -461,3 +461,26 @@
 .sw-arrow-down {
   transform: rotate(180deg);
 }
+
+.tip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main);
+  color: #fff;
+  width: fit-content;
+  max-width: 500px;
+  height: auto;
+  font-size: 16px;
+  padding: 10px 50px;
+  border-top-right-radius: 4px;
+  line-height: 1.2;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: var(--tran-05);
+}
+.tip.active {
+  transform: translateX(0);
+}

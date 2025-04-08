@@ -1,74 +1,94 @@
 [
   {
-    "name": {
-      "ru": "Плуг",
-      "en": "Plow"
-    },
-    "cod": {
-      "ru": "PG 300",
-      "en": "PG 300"
-    },
-    "description": {
-      "ru": "Для вспашки земель, подготовки почвы к посеву",
-      "en": "For plowing land, preparing soil for planting"
-    },
-    "specifications": {
+    "categories": {
       "ru": {
-        "площадь": "1 - 3 га/ч",
-        "Рабочая скорость движения": "3 - 6 км/ч"
+        "Техника для садоводства": {
+          "subCategories": {
+            "Садовые тракторы и культиваторы": {
+              "object": [
+                {
+                  "name": "Плуг",
+                  "cod": "PG 300",
+                  "description": "Для вспашки земель, подготовки почвы к посеву",
+                  "specifications": {
+                    "площадь": "1 - 3 га/ч",
+                    "Рабочая скорость движения": "3 - 6 км/ч"
+                  },
+                  "subCategories": [
+                    "Сажалка для рассады",
+                    "Сеялка для овощей",
+                    "Автоматическая сажалка",
+                    "Пневматическая сеялка для сада",
+                    "Сеялка для моркови"
+                  ],
+                  "brend": ["MECARGO", "BARGAM", "MOSH"],
+                  "filter": ["Новинка", "Популярное"],
+                  "photo": [
+                    "/assets/img/1.png",
+                    "/assets/img/2.png",
+                    "/assets/img/3.png",
+                    "/assets/img/4.png",
+                    "/assets/img/5.png"
+                  ]
+                }
+              ]
+            },
+            "Сеялки и сажалки для овощей": {},
+            "Уборочная техника для ягод": {},
+            "Почвообрабатывающее оборудование для сада": {}
+          }
+        },
+        "Техника для виноградарства": {
+          "subCategories": {}
+        },
+        "Техника для животноводства": {
+          "subCategories": {}
+        }
       },
       "en": {
-        "area": "1 - 3 ha/h",
-        "Working speed of movement": "3 - 6 km/h"
+        "Horticultural Equipment": {
+          "subCategories": {
+            "Garden Tractors and Cultivators": {
+              "object": [
+                {
+                  "name": "Plow",
+                  "cod": "PG 300",
+                  "description": "For plowing land, preparing soil for sowing",
+                  "specifications": {
+                    "area": "1 - 3 ha/h",
+                    "Working speed of movement": "3 - 6 km/h"
+                  },
+                  "subCategories": [
+                    "Seedling Planter",
+                    "Vegetable Seeder",
+                    "Automatic Planter",
+                    "Pneumatic Seeder for Gardens",
+                    "Carrot Planter"
+                  ],
+                  "brend": ["MECARGO", "BARGAM", "MOSH"],
+                  "filter": ["New", "Popular"],
+                  "photo": [
+                    "/assets/img/1.png",
+                    "/assets/img/2.png",
+                    "/assets/img/3.png",
+                    "/assets/img/4.png",
+                    "/assets/img/5.png"
+                  ]
+                }
+              ]
+            },
+            "Seeders and Planters for Vegetables": {},
+            "Harvesting Equipment for Berries": {},
+            "Soil Processing Equipment for Gardens": {}
+          }
+        },
+        "Grapevine Equipment": {
+          "subCategories": {}
+        },
+        "Livestock Equipment": {
+          "subCategories": {}
+        }
       }
-    },
-    "subCategories": {
-      "ru": ["объект 1", "объект 2", "объект 3", "объект 4"],
-      "en": ["Soil Processing", "Plows", "Agricultural Machines"]
-    },
-    "brand": ["MECARGO", "BARGAM", "MOSH"],
-    "фото": [
-      "/assets/img/1.png",
-      "/assets/img/2.png",
-      "/assets/img/3.png",
-      "/assets/img/4.png",
-      "/assets/img/5.png"
-    ]
-  },
-  {
-    "name": {
-      "ru": "Сеялка",
-      "en": "Seed Drill"
-    },
-    "cod": {
-      "ru": "SD 400",
-      "en": "SD 400"
-    },
-    "description": {
-      "ru": "Для посева семян в подготовленную почву с заданной нормой",
-      "en": "For sowing seeds into prepared soil with a specified rate"
-    },
-    "specifications": {
-      "ru": {
-        "площадь": "2 - 5 га/ч",
-        "Рабочая скорость движения": "6 - 10 км/ч"
-      },
-      "en": {
-        "area": "2 - 5 ha/h",
-        "Working speed of movement": "6 - 10 km/h"
-      }
-    },
-    "subCategories": {
-      "ru": ["объект 1", "объект 2", "объект 3", "объект 4"],
-      "en": ["Sowing", "Seed Drills", "Agricultural Machines"]
-    },
-    "brand": ["MECARGO", "BARGAM", "MOSH"],
-    "фото": [
-      "/assets/img/2.png",
-      "/assets/img/2.png",
-      "/assets/img/3.png",
-      "/assets/img/4.png",
-      "/assets/img/5.png"
-    ]
+    }
   }
 ]

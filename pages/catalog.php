@@ -16,7 +16,7 @@
 		<div class="catalog-vue">
 			<div class="categories-con">
 					<ul class="filter-categories">
-						<li><h2>Бренды <span class="brend-tip"></span></h2>
+						<li><h2>Бренды</span></h2>
 							<ul>
 								<li class="categories-brand active"><h2>MECARGO</h2></li>
 								<li><h2>|</h2></li>
@@ -30,87 +30,6 @@
 					</ul>
 					<div class="categories-margin"></div>
 					<ul class="main-categories">
-						<!-- <li>
-							<h2 class="open-img">Техника для полевых культур</h2>
-							<ul class="sub-catigories">
-								<li class="catigories-item">
-									<h2 class="open-img">Прицепные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									
-								<h2 class="open-img">Навесные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
-							</ul>
-						</li>
-						<li>
-							<h2 class="open-img">Техника для Садов</h2>
-							<ul class="sub-catigories">
-								<li class="catigories-item">
-									<h2 class="open-img">Прицепные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Навесные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
-							</ul>
-						</li>
-						<li>
-							<h2 class="open-img">Опрыскиватели</h2>
-							<ul class="sub-catigories">
-								<li class="catigories-item">
-									<h2 class="open-img">Прицепные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Навесные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
-							</ul>
-						</li>
-						<li>
-							<h2 class="open-img">Техника для виноградников</h2>
-							<ul class="sub-catigories">
-								<li class="catigories-item">
-									<h2 class="open-img">Прицепные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Навесные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
-							</ul>
-						</li>
-						<li>
-							<h2 class="open-img">Запасные части | Сервис</h2>
-							<ul class="sub-catigories">
-								<li class="catigories-item">
-									<h2 class="open-img">Прицепные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Навесные опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Садовые и виноградниковые опрыскиватели</h2>
-								</li>
-								<li class="catigories-item">
-									<h2 class="open-img">Штанговые опрыскиватели</h2></li>
-							</ul>
-						</li> -->
 					</ul>
 			</div>
 			<div class="object-con">
@@ -165,13 +84,13 @@
 						<div class="green-line"></div>
 						<div class="object-descripcion">
 							<div class="object-categoty_main">
-								<h2>Категория: Опрыскиватели для многолетних насаждений</h2>
+								<h2 class="object-categoty_main-text">Категория: Опрыскиватели для многолетних насаждений</h2>
 							</div>
 							<div class="object-name_main">
-								<h1>Опрыскиватель вентиляторный SLV 1500/2000 FV</h1>
+								<h1 class="object-name_main-text">Опрыскиватель вентиляторный SLV 1500/2000 FV</h1>
 							</div>
 							<div class="object-descripcion_main">
-								<h3 id="description">
+								<h3 class="object-descripcion_main-text" id="description">
 									Для химической защиты от вредителей и болезней многолетних насаждений садов высотой до 5 м, с шириной междурядий до 6 м и виноградников с шириной междурядий 2,5 м и более. Примененяется во всех зонах земледелия, за исключением участков с крутыми склонами (свыше 7°).
 									Машины для садов и виноградников
 									Агрегат для посадки винограда ASV•6•4000

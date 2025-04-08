@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////
 
-const activeBrand = () => {
+const activeBrend = () => {
   const categoriesBrand = document.querySelectorAll(".categories-brand");
 
   categoriesBrand.forEach((item) => {
@@ -25,49 +25,42 @@ const activeBrand = () => {
 
       if (activeBrands.length > 0) {
         const brandNames = activeBrands.join(", ");
-        const brandTipElement = document.querySelector(".brend-tip");
+        const tip = document.querySelector(".tip");
 
-        brandTipElement.innerHTML = `Задан фильтр по брендам:<br> ${brandNames}`;
-        brandTipElement.style.opacity = 1;
-
-        setTimeout(() => {
-          brandTipElement.style.transition = "opacity 0.5s";
-          brandTipElement.style.opacity = 0;
-        }, 2000);
+        tip.classList.add("active");
+        tip.innerHTML = `<h3>Задан фильтр по брендам:<br> ${brandNames}</h3>`;
       }
     });
   });
 };
 
-activeBrand();
+activeBrend();
 
-//////////////////////////////////////////////////////////////////////////////
+// function checkWordCount() {
+//   const descriptionElement = document.getElementById("description");
+//   const fullText = descriptionElement.innerText.trim();
+//   const words = fullText.split(/\s+/); // Разбиваем текст на слова
 
-function checkWordCount() {
-  const descriptionElement = document.getElementById("description");
-  const fullText = descriptionElement.innerText.trim();
-  const words = fullText.split(/\s+/); // Разбиваем текст на слова
+//   if (words.length > 40) {
+//     const shortText = words.slice(0, 40).join(" ") + "..."; // Берем первые 20 слов
+//     descriptionElement.innerText = shortText; // Обновляем текст в элементе
+//     document.getElementById("readMoreBtn").style.display = "inline"; // Показываем кнопку
+//   }
+// }
 
-  if (words.length > 40) {
-    const shortText = words.slice(0, 40).join(" ") + "..."; // Берем первые 20 слов
-    descriptionElement.innerText = shortText; // Обновляем текст в элементе
-    document.getElementById("readMoreBtn").style.display = "inline"; // Показываем кнопку
-  }
-}
+// document.getElementById("readMoreBtn").onclick = function () {
+//   const descriptionElement = document.getElementById("description");
+//   descriptionElement.innerText =
+//     descriptionElement.getAttribute("data-full-text"); // Показываем полный текст
+//   this.style.display = "none"; // Скрываем кнопку
+// };
 
-document.getElementById("readMoreBtn").onclick = function () {
-  const descriptionElement = document.getElementById("description");
-  descriptionElement.innerText =
-    descriptionElement.getAttribute("data-full-text"); // Показываем полный текст
-  this.style.display = "none"; // Скрываем кнопку
-};
-
-window.onload = function () {
-  // Сохраняем полный текст в атрибут data-full-text
-  const descriptionElement = document.getElementById("description");
-  descriptionElement.setAttribute(
-    "data-full-text",
-    descriptionElement.innerText
-  );
-  checkWordCount();
-};
+// window.onload = function () {
+//   // Сохраняем полный текст в атрибут data-full-text
+//   const descriptionElement = document.getElementById("description");
+//   descriptionElement.setAttribute(
+//     "data-full-text",
+//     descriptionElement.innerText
+//   );
+//   checkWordCount();
+// };

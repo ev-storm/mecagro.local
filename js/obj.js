@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////
+/////////////////////////----JSON------////////////////////////////////
 const jsonCategories = "../js/categories.json";
 
 const fetchDataCategories = async () => {
@@ -12,67 +12,74 @@ const fetchDataCategories = async () => {
     console.error("Ошибка загрузки данных: ", error);
   }
 };
+/////////////////////////----JSON------////////////////////////////////
 
-/////////////////////////////////////////////////////////////////////////////
-const createAndSetupCategories = async () => {
-  const dataCategories = await fetchDataCategories();
+///////////////////////---------LEFT-MENU--------///////////////////////////////////
+const createLeftMenu = async (langToggle = "ru") => {
+  const dataCategoriesMenu = await fetchDataCategories();
+  const menuContainer = document.querySelector(".main-categories");
+  menuContainer.innerHTML = "";
 
-  // Проверяем, что данные загружены корректно
-  if (!dataCategories || !dataCategories[0].categories) {
-    console.error("Не удалось загрузить категории или они отсутствуют");
-    return;
-  }
+  let menuHTML = "";
+  const langSwitch = document.querySelectorAll(".lang-switch");
 
-  const mainCategories = document.querySelector(".main-categories");
-  mainCategories.innerHTML = ""; // Очищаем предыдущее содержимое
+  langSwitch.forEach((item) => {
+    item.addEventListener("click", () => {
+      const langValue = item.value;
 
-  // Перебираем категории
+      console.log(langValue);
+
+      langToggle = langValue === "ru" ? "ru" : "en";
+      createLeftMenu(langToggle);
+    });
+  });
+
   for (const [categoryName, categoryDetails] of Object.entries(
-    dataCategories[0].categories
+    dataCategoriesMenu[0].categories[langToggle]
   )) {
-    const categoryItem = document.createElement("li");
-    categoryItem.innerHTML = `<h2 class="open-img">${categoryName}</h2>`;
+    let subCategoryHTML = "";
 
-    const subCategoryList = document.createElement("ul");
-    subCategoryList.classList.add("main-sub_categories");
-    subCategoryList.classList.add("main-items", "close");
+    if (categoryDetails.subCategories) {
+      for (const [subCategoryName, subCategoryDetails] of Object.entries(
+        categoryDetails.subCategories
+      )) {
+        let objectHTML = "";
 
-    // Перебираем подкатегории
-    for (const [subCategoryName, subCategoryDetails] of Object.entries(
-      categoryDetails.subCategories
-    )) {
-      const subCategoryItem = document.createElement("li");
-      subCategoryItem.innerHTML = `<h2 class="open-img">${subCategoryName}</h2>`;
+        if (subCategoryDetails.object && subCategoryDetails.object.length > 0) {
+          for (const object of subCategoryDetails.object) {
+            objectHTML += `
+              <li class="object-item"><h2 class="obj-btn">${object.name}${object.cod}</h2></li>`;
+          }
+        }
 
-      const objectList = document.createElement("ul");
-      objectList.classList.add("main-items", "close");
-
-      // Добавляем предметы в подкатегории
-      for (const object of subCategoryDetails.object) {
-        const objectItem = document.createElement("li");
-        objectItem.classList.add("object-item");
-        objectItem.innerHTML = `<h2 class="obj-btn">${object}</h2>`;
-        objectList.appendChild(objectItem);
+        subCategoryHTML += `
+                <li>
+                  <h2 class="open-img">${subCategoryName}</h2>
+                  <ul class="main-items close">${objectHTML}</ul>
+                </li>`;
       }
-
-      subCategoryItem.appendChild(objectList);
-      subCategoryList.appendChild(subCategoryItem);
     }
 
-    categoryItem.appendChild(subCategoryList);
-    mainCategories.appendChild(categoryItem);
+    menuHTML += `
+      <li>
+        <h2 class="open-img">${categoryName}</h2>
+        <ul class="main-sub_categories main-items close">${subCategoryHTML}</ul>
+      </li>`;
   }
-
-  // Инициализируем переключение категорий
+  menuContainer.innerHTML = menuHTML;
   setupToggleCategories();
+  objectClick();
 };
 
+createLeftMenu();
+///////////////////////---------LEFT-MENU--------///////////////////////////////////
+
+//////////////////////////------LEFT_MENU_ANIMATED--------///////////////////////////
 const setupToggleCategories = () => {
   const openItems = document.querySelectorAll(".open-img");
 
   openItems.forEach((item) => {
     item.addEventListener("click", () => {
-      console.log("ok");
       const subcategories = item.nextElementSibling;
       const allSubcategories = document.querySelectorAll("ul.open, ul.close");
 
@@ -100,102 +107,288 @@ const setupToggleCategories = () => {
     });
   });
 };
+/////////////////////------LEFT_MENU_ANIMATED--------////////////////////////////
 
-// Запуск функции создания и настройки категорий
-createAndSetupCategories();
+///////////////////////---------MENU--------///////////////////////////////////
+const createListMenu = async (langToggle = "ru") => {
+  const dataCategoriesMenu = await fetchDataCategories();
+  const menuContainer = document.querySelector(".menu-categories");
+  menuContainer.innerHTML = "";
 
-// const createList = async () => {
-//   const dataCategories = await fetchDataCategories();
+  let menuHTML = "";
+  const langSwitch = document.querySelectorAll(".lang-switch");
 
-//   // Проверяем, что данные загружены корректно
-//   if (!dataCategories || !dataCategories[0].categories) {
-//     console.error("Не удалось загрузить категории или они отсутствуют");
-//     return;
-//   }
+  langSwitch.forEach((item) => {
+    item.addEventListener("click", () => {
+      const langValue = item.value;
 
-//   const mainCategories = document.querySelector(".main-categories"); // Получаем один элемент
+      console.log(langValue);
 
-//   mainCategories.innerHTML = ""; // Очищаем предыдущее содержимое
+      if (langValue === "ru") {
+        langToggle = "ru";
+      } else {
+        langToggle = "en";
+      }
 
-//   // Перебираем категории
-//   for (const [categoryName, categoryDetails] of Object.entries(
-//     dataCategories[0].categories
-//   )) {
-//     const categoryItem = document.createElement("li");
-//     categoryItem.innerHTML = `<h2 class="open-img">${categoryName}</h2>`;
+      // Обновляем меню с новым языком
+      createListMenu(langToggle);
+    });
+  });
 
-//     const subCategoryList = document.createElement("ul"); // Список для подкатегорий
-//     subCategoryList.classList.add("main-sub_categories");
+  // Готовим HTML для меню
+  for (const [categoryName, categoryDetails] of Object.entries(
+    dataCategoriesMenu[0].categories[langToggle]
+  )) {
+    let subCategoryHTML = "";
 
-//     // Перебираем подкатегории
-//     for (const [subCategoryName, subCategoryDetails] of Object.entries(
-//       categoryDetails.subCategories
-//     )) {
-//       const subCategoryItem = document.createElement("li");
-//       subCategoryItem.innerHTML = `<h2 class="open-img">${subCategoryName}</h2>`;
+    if (categoryDetails.subCategories) {
+      for (const [subCategoryName, subCategoryDetails] of Object.entries(
+        categoryDetails.subCategories
+      )) {
+        let objectHTML = "";
 
-//       const objectList = document.createElement("ul");
-//       objectList.classList.add("main-items");
-//       objectList.classList.add("close");
+        if (subCategoryDetails.object && subCategoryDetails.object.length > 0) {
+          for (const object of subCategoryDetails.object) {
+            objectHTML += `
+              <li>
+                ${object.name} (${object.cod})
+              </li>`;
+          }
+        } else {
+          objectHTML = "";
+        }
 
-//       for (const object of subCategoryDetails.object) {
-//         const objectItem = document.createElement("li");
-//         objectItem.classList.add("object-item");
-//         objectItem.innerHTML = `<h2 class="obj-btn">${object}</h2>`;
-//         objectList.appendChild(objectItem);
-//       }
+        subCategoryHTML += `
+          <li>
+            ${subCategoryName}
+            <ul class="menu-items">
+              ${objectHTML}
+            </ul>
+          </li>`;
+      }
+    }
 
-//       subCategoryItem.appendChild(objectList);
-//       subCategoryList.appendChild(subCategoryItem);
-//     }
+    menuHTML += `
+      <li>
+        ${categoryName}
+        <ul class="menu-sub_categories">
+          ${subCategoryHTML}
+        </ul>
+      </li>`;
+  }
+  menuContainer.innerHTML = menuHTML;
+};
+createListMenu();
+///////////////////////---------MENU--------///////////////////////////////////
 
-//     categoryItem.appendChild(subCategoryList);
-//     mainCategories.appendChild(categoryItem); // Добавляем элемент категории в mainCategories
-//   }
-// };
+///////////////////////---------OBJECT-KLICK--------///////////////////////////////////
 
-// createList();
-//////////////////////////////////////////////////////////
-// const jsonObj = "../js/obj.json";
+const objectClick = async () => {
+  const objItem = document.querySelectorAll(".object-item");
+  const data = await fetchDataCategories();
+  const objName = document.querySelector(".object-name_main-text");
+  const objDescripcion = document.querySelector(
+    ".object-descripcion_main-text"
+  );
+  const objSubCategory = document.querySelector(".object-categoty_main-text");
 
-// const fetchDataObj = async () => {
-//   try {
-//     const response = await fetch(jsonObj);
-//     if (!response.ok) {
-//       throw new Error("Network response was not ok " + response.statusText);
-//     }
-//     return await response.json(); // Возвращаем загруженные данные
-//   } catch (error) {
-//     console.error("Ошибка загрузки данных: ", error);
-//   }
-// };
+  objItem.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Получаем текстовое содержимое элемента h2 внутри текущего objItem
+      const btnText = item.querySelector(".obj-btn").textContent;
 
-// const createListObject = async () => {
-//   const dataObj = await fetchDataObj();
-//   const catigoriesItem = document.querySelectorAll(".main-categories");
+      // Разделяем текст на имя и код (например, "ПлугPG 300" на "Плуг" и "PG 300")
+      const regex = /(.*?)(\s*PG\s*\d+)/;
+      const match = btnText.match(regex);
+      if (match) {
+        const name = match[1].trim(); // Получаем имя объекта
+        const cod = match[2].trim(); // Получаем код объекта
 
-//   catigoriesItem.forEach((element) => {
-//     const categoryName = element.innerText;
-//     const matchedItems = dataObj.filter((item) =>
-//       item.subCategories.ru.includes(categoryName)
-//     );
+        // Проходим по категориям и подкатегориям для поиска объекта
+        for (const [categoryName, categoryDetails] of Object.entries(
+          data[0].categories.ru
+        )) {
+          if (categoryDetails.subCategories) {
+            for (const [subCategoryName, subCategoryDetails] of Object.entries(
+              categoryDetails.subCategories
+            )) {
+              for (const object of subCategoryDetails.object) {
+                if (object.name === name && object.cod === cod) {
+                  objName.textContent = object.name + " " + object.cod;
+                  objDescripcion.textContent = object.description;
+                  objSubCategory.textContent = subCategoryName;
+                  // Здесь вы можете вывести и другие характеристики объекта
+                }
+              }
+            }
+          }
+        }
+      } else {
+        console.error(
+          "Не удалось извлечь имя и код из текста кнопки:",
+          btnText
+        );
+      }
+    });
+  });
+};
+///////////////////////---------OBJECT-KLICK--------///////////////////////////////////
 
-//     if (matchedItems.length > 0) {
-//       let objectList = element.querySelector(".main-sub_categories");
-//       if (!objectList) {
-//         objectList = document.createElement("ul");
-//         objectList.classList.add("object-list", "close");
-//         element.appendChild(objectList);
-//       }
+//////////////////////-----------SEARCH------------/////////////////////////////////
+const search = () => {
+  const langSwitch = document.querySelectorAll(".lang-switch");
 
-//       // Генерируем HTML строки для всех объектов, которые подошли под фильтрацию
-//       const listItemsHTML = matchedItems
-//         .map((item) => {
-//           return `<li class="obj-btn"><h2>${item.name.ru}${item.cod.ru}</h2></li>`;
-//         })
-//         .join(""); // Объединяем все элементы в строку
+  langSwitch.forEach((item) => {
+    item.addEventListener("click", () => {
+      const langValue = item.value;
 
-//       createListObject.innerHTML += listItemsHTML; // Обновляем innerHTML списка
-//     }
-//   });
-// };
+      if (langValue === "ru") {
+        langToggle = "ru";
+      } else {
+        langToggle = "en";
+      }
+    });
+  });
+
+  // Вызываем функцию для инициализации
+  let langToggle = "ru"; // Переменная для текущего языка
+
+  const searchProducts = async (query) => {
+    const data = await fetchDataCategories();
+
+    if (!data || !data.length) {
+      console.error("Неверные данные");
+      return;
+    }
+
+    const results = [];
+
+    data.forEach((category) => {
+      for (const categoryName in category.categories[langToggle]) {
+        const subCategories =
+          category.categories[langToggle][categoryName].subCategories;
+
+        for (const subCategoryName in subCategories) {
+          const products = subCategories[subCategoryName].object;
+
+          if (Array.isArray(products)) {
+            // Фильтровать продукты по запросу
+            products.forEach((item) => {
+              const name = item.name.toLowerCase();
+              if (name.includes(query.toLowerCase())) {
+                results.push(item);
+              }
+            });
+          }
+        }
+      }
+    });
+
+    displayResults(results);
+    console.log(results);
+  };
+
+  const displayAllProducts = async () => {
+    const data = await fetchDataCategories();
+
+    if (!data || !data.length) {
+      console.error("Неверные данные");
+      return;
+    }
+
+    const allProducts = [];
+
+    data.forEach((category) => {
+      for (const categoryName in category.categories[langToggle]) {
+        const subCategories =
+          category.categories[langToggle][categoryName].subCategories;
+
+        for (const subCategoryName in subCategories) {
+          const products = subCategories[subCategoryName].object;
+
+          if (Array.isArray(products)) {
+            allProducts.push(...products); // Собираем все товары
+          }
+        }
+      }
+    });
+
+    // Фильтруем товары по популярности и новизне
+    const popularAndNewProducts = allProducts.filter(
+      (product) => (product.filter && product.filter[0]) || product.filter[1]
+    );
+
+    const otherProducts = allProducts.filter(
+      (product) =>
+        !((product) =>
+          (product.filter && product.filter[0]) || product.filter[1])
+    );
+
+    // Объединяем массивы
+    const sortedProducts = [...popularAndNewProducts, ...otherProducts];
+
+    document
+      .getElementById("searchInput")
+      .addEventListener("input", (event) => {
+        const query = event.target.value;
+        if (query.length > 0) {
+          searchProducts(query);
+        } else {
+          displayResults(sortedProducts);
+        }
+      });
+
+    displayResults(sortedProducts); // Отображаем все товары в нужном порядке
+  };
+
+  const displayResults = (results) => {
+    const resultsContainer = document.getElementById("resultsContainer");
+    resultsContainer.innerHTML = ""; // Очистка предыдущих результатов
+
+    if (results.length === 0) {
+      resultsContainer.innerHTML = `<h2 class="no-search">Инструмент не найден</h2>`;
+      return;
+    }
+
+    results.forEach((item) => {
+      const resultItem = document.createElement("div");
+
+      console.log(results);
+
+      resultItem.classList.add("result-item");
+
+      resultItem.innerHTML = `
+				<div class="search-photo">
+					<img src="${item.photo[0]}" alt="${item.name}">
+					
+				</div>
+				<div class="search-item">
+					<h1>${item.name}</h1>
+					<h2>${item.cod}</h2>
+					<h3>${item.filter[0] ? item.filter[0] : ""}</h3>
+				</div>
+			`;
+
+      resultsContainer.appendChild(resultItem);
+    });
+  };
+
+  document.getElementById("searchInput").addEventListener("focus", (event) => {
+    const query = event.target.value;
+    if (query.length === 0) {
+      displayAllProducts();
+    }
+  });
+
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("focus", () => {
+    document.querySelector("#resultsContainer").classList.add("active");
+  });
+  searchInput.addEventListener("blur", () => {
+    document.querySelector("#resultsContainer").classList.remove("active");
+  });
+
+  searchProducts();
+};
+search();
+//////////////////////-----------SEARCH------------/////////////////////////////////

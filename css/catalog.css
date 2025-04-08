@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 20px;
 }
 
 /* --------------- SWIPER --------------- */
@@ -39,7 +40,7 @@
 .object-swiper {
   width: 80%;
   border-radius: 10px;
-  box-shadow: #00000020 0 0 10px;
+  box-shadow: #00000020 0 0 20px;
   height: 600px;
 }
 .object-swiper_mini {
@@ -59,7 +60,7 @@
 }
 
 .object-swiper_mini .swiper-slide-thumb-active {
-  box-shadow: #00000020 0 0 10px;
+  box-shadow: #00000020 0 0 20px;
 }
 
 .object-swiper_mini .swiper-wrapper {
@@ -85,7 +86,7 @@
   cursor: pointer;
   transition: var(--tran-05);
 }
-.swiper-button-next,
+.swiper-button-next:hover,
 .swiper-button-prev:hover {
   opacity: 0.8;
 }
@@ -104,11 +105,12 @@
   height: fit-content;
 }
 #readMoreBtn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   border-style: none;
   color: var(--main);
   background: transparent;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
 }
 .green-line {
@@ -233,7 +235,7 @@
   display: flex;
   align-items: center;
   color: var(--black);
-  font-size: 18px;
+  font-size: 16px;
   padding: 2px 0px;
   line-height: 1.5;
   font-weight: 550;
@@ -255,6 +257,7 @@
 .main-items li h2 {
   color: var(--black);
   font-weight: 550;
+  font-size: 16px;
 }
 .main-items li h2:hover {
   color: var(--main);
