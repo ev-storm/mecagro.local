@@ -1,34 +1,38 @@
 .catalog-vue {
   display: flex;
   align-items: start;
-  padding-top: 150px;
+  padding-top: 100px;
   width: 100%;
   height: 100vh;
 }
-.categories-con {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  height: 100%;
-  overflow: scroll;
-}
+
 .object-con {
   display: flex;
   flex-direction: column;
   width: 70%;
   height: 100%;
 }
+
 .object {
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow: scroll;
 }
+
 .object-prevue {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 20px;
+  opacity: 1;
+  transition: var(--tran-01);
+  transform: translateX(0);
+}
+.object-prevue.hide {
+  opacity: 0;
+  transition: var(--tran-01);
+  transform: translateX(-30px);
 }
 
 /* --------------- SWIPER --------------- */
@@ -41,11 +45,11 @@
   width: 80%;
   border-radius: 10px;
   box-shadow: #00000020 0 0 20px;
-  height: 600px;
+  height: 500px;
 }
 .object-swiper_mini {
   width: 20%;
-  height: 600px;
+  height: 500px;
 }
 .object-slide {
   overflow: hidden;
@@ -57,6 +61,7 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: #00000000 0 0 10px;
+  cursor: pointer;
 }
 
 .object-swiper_mini .swiper-slide-thumb-active {
@@ -76,7 +81,7 @@
   width: 80%;
   display: flex;
   justify-content: space-between;
-  padding: 50px 0px;
+  padding: 20px 0px 30px 0px;
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -103,6 +108,14 @@
   align-items: center;
   width: 80%;
   height: fit-content;
+  opacity: 1;
+  transition: var(--tran-03);
+  transform: translateX(0);
+}
+.object-descripcion-con.hide {
+  transform: translateX(-30px);
+  opacity: 0;
+  transition: 0s;
 }
 #readMoreBtn {
   font-family: "Montserrat", sans-serif;
@@ -113,6 +126,7 @@
   font-size: 14px;
   cursor: pointer;
 }
+
 .green-line {
   width: 4px;
   height: 100%;
@@ -146,6 +160,14 @@
   width: 80%;
   margin: 100px 0;
   flex-direction: column;
+  opacity: 1;
+  transition: var(--tran-03);
+  transform: translateY(0);
+}
+.object-specifications.hide {
+  opacity: 0;
+  transition: 0s;
+  transform: translateY(-30px);
 }
 .object-specifications-title {
   margin: 20px 0;
@@ -202,12 +224,17 @@
 
 /* -------------categories------------ */
 .categories-con {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
   display: flex;
   align-items: start;
   justify-content: start;
-  padding: 0 3%;
+  padding: 50px 3%;
+  overflow: scroll;
 }
+
 .categories-margin {
   width: 200px;
   height: 2px;

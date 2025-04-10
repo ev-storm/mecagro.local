@@ -14,25 +14,57 @@ const fetchDataCategories = async () => {
 };
 /////////////////////////----JSON------////////////////////////////////
 
+/////////////////////////---- BREND ------////////////////////////////////
+const activeBrend = () => {
+  const categoriesBrand = document.querySelectorAll(".categories-brand");
+
+  categoriesBrand.forEach((item) => {
+    item.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      const activeCount = Array.from(categoriesBrand).filter((el) =>
+        el.classList.contains("active")
+      ).length;
+
+      if (isActive) {
+        if (activeCount > 1) {
+          item.classList.remove("active");
+        }
+      } else {
+        item.classList.add("active");
+      }
+
+      const activeBrands = Array.from(categoriesBrand)
+        .filter((el) => el.classList.contains("active"))
+        .map((el) => el.querySelector("h2").textContent);
+
+      if (activeBrands.length > 0) {
+        const brandNames = activeBrands.join(", ");
+        const tip = document.querySelector(".tip");
+
+        tip.classList.add("active");
+        tip.innerHTML = `<h3>Задан фильтр по брендам:<br> ${brandNames}</h3>`;
+
+        createLeftMenu(activeBrands);
+        createListMenu(activeBrands);
+      }
+    });
+  });
+};
+
+activeBrend();
+/////////////////////////---- BREND ------////////////////////////////////
+
 ///////////////////////---------LEFT-MENU--------///////////////////////////////////
-const createLeftMenu = async (langToggle = "ru") => {
+
+const createLeftMenu = async (activeBrands = ["MECARGO", "BARGAM", "MOSH"]) => {
   const dataCategoriesMenu = await fetchDataCategories();
   const menuContainer = document.querySelector(".main-categories");
+  const brand = document.querySelectorAll(".categories-brand");
+
   menuContainer.innerHTML = "";
 
   let menuHTML = "";
-  const langSwitch = document.querySelectorAll(".lang-switch");
-
-  langSwitch.forEach((item) => {
-    item.addEventListener("click", () => {
-      const langValue = item.value;
-
-      console.log(langValue);
-
-      langToggle = langValue === "ru" ? "ru" : "en";
-      createLeftMenu(langToggle);
-    });
-  });
 
   for (const [categoryName, categoryDetails] of Object.entries(
     dataCategoriesMenu[0].categories[langToggle]
@@ -47,8 +79,10 @@ const createLeftMenu = async (langToggle = "ru") => {
 
         if (subCategoryDetails.object && subCategoryDetails.object.length > 0) {
           for (const object of subCategoryDetails.object) {
-            objectHTML += `
+            if (activeBrands.some((brand) => object.brand.includes(brand))) {
+              objectHTML += `
               <li class="object-item"><h2 class="obj-btn">${object.name}${object.cod}</h2></li>`;
+            }
           }
         }
 
@@ -110,30 +144,12 @@ const setupToggleCategories = () => {
 /////////////////////------LEFT_MENU_ANIMATED--------////////////////////////////
 
 ///////////////////////---------MENU--------///////////////////////////////////
-const createListMenu = async (langToggle = "ru") => {
+const createListMenu = async (activeBrands = ["MECARGO", "BARGAM", "MOSH"]) => {
   const dataCategoriesMenu = await fetchDataCategories();
   const menuContainer = document.querySelector(".menu-categories");
   menuContainer.innerHTML = "";
 
   let menuHTML = "";
-  const langSwitch = document.querySelectorAll(".lang-switch");
-
-  langSwitch.forEach((item) => {
-    item.addEventListener("click", () => {
-      const langValue = item.value;
-
-      console.log(langValue);
-
-      if (langValue === "ru") {
-        langToggle = "ru";
-      } else {
-        langToggle = "en";
-      }
-
-      // Обновляем меню с новым языком
-      createListMenu(langToggle);
-    });
-  });
 
   // Готовим HTML для меню
   for (const [categoryName, categoryDetails] of Object.entries(
@@ -149,14 +165,25 @@ const createListMenu = async (langToggle = "ru") => {
 
         if (subCategoryDetails.object && subCategoryDetails.object.length > 0) {
           for (const object of subCategoryDetails.object) {
-            objectHTML += `
-              <li>
-                ${object.name} (${object.cod})
-              </li>`;
+            if (activeBrands.some((brand) => object.brand.includes(brand))) {
+              objectHTML += `
+								<li>
+									${object.name} (${object.cod})
+								</li>`;
+            }
           }
         } else {
           objectHTML = "";
         }
+
+        // if (subCategoryDetails.object && subCategoryDetails.object.length > 0) {
+        //   for (const object of subCategoryDetails.object) {
+        //     if (activeBrands.some((brand) => object.brand.includes(brand))) {
+        //       objectHTML += `
+        //       <li class="object-item"><h2 class="obj-btn">${object.name}${object.cod}</h2></li>`;
+        //     }
+        //   }
+        // }
 
         subCategoryHTML += `
           <li>
@@ -181,6 +208,62 @@ const createListMenu = async (langToggle = "ru") => {
 createListMenu();
 ///////////////////////---------MENU--------///////////////////////////////////
 
+///////////////////////---------OBJECT_ANIMATED--------///////////////////////////////////
+const objAnimated = () => {
+  const elementsToAnimate = [
+    document.querySelector(".object-prevue"),
+    document.querySelector(".object-descripcion-con"),
+    document.querySelector(".object-specifications"),
+  ];
+
+  const showElement = (element) => {
+    element.classList.add("hide");
+    setTimeout(() => {
+      element.classList.remove("hide");
+    }, 300);
+  };
+
+  elementsToAnimate.forEach(showElement);
+};
+///////////////////////---------OBJECT_ANIMATED--------///////////////////////////////////
+function updateSlides(object) {
+  // Проверяем, существует ли объект и его массив photo
+  if (object && Array.isArray(object.photo)) {
+    const photoUrls = []; // Создаем массив для хранения URL изображений
+
+    // Заполняем массив photoUrls из данных объекта
+    for (let i = 0; i < object.photo.length; i++) {
+      photoUrls.push(object.photo[i]);
+    }
+
+    // Обновляем содержимое слайдов из photoUrls для основных слайдов
+    updateSlideImages(".object-slide", photoUrls);
+
+    // Обновляем содержимое слайдов из photoUrls для мини-слайдов
+    updateSlideImages(".object-slide_mini", photoUrls);
+  }
+}
+
+///////////////////////--------- PHOTO -------///////////////////////////////////
+function updateSlideImages(selector, photoUrls) {
+  const slides = document.querySelectorAll(selector);
+
+  slides.forEach((item, index) => {
+    // Проверяем, существует ли соответствующий URL для текущего слайда
+    if (index < photoUrls.length) {
+      // Находим img внутри текущего слайда и обновляем его src
+      const img = item.querySelector("img"); // Находим изображение внутри слайда
+      if (img) {
+        img.src = photoUrls[index]; // Обновляем ссылку на изображение
+      } else {
+        // Если изображения нет, создаем его
+        item.innerHTML = `<img src="${photoUrls[index]}"/>`;
+      }
+    }
+  });
+}
+///////////////////////--------- PHOTO --------///////////////////////////////////
+
 ///////////////////////---------OBJECT-KLICK--------///////////////////////////////////
 
 const objectClick = async () => {
@@ -191,9 +274,13 @@ const objectClick = async () => {
     ".object-descripcion_main-text"
   );
   const objSubCategory = document.querySelector(".object-categoty_main-text");
+  const objSlide = document.querySelectorAll(".object-slide");
+  const objSlideMini = document.querySelectorAll(".object-slide_mini");
 
   objItem.forEach((item) => {
     item.addEventListener("click", () => {
+      objAnimated();
+
       // Получаем текстовое содержимое элемента h2 внутри текущего objItem
       const btnText = item.querySelector(".obj-btn").textContent;
 
@@ -206,7 +293,7 @@ const objectClick = async () => {
 
         // Проходим по категориям и подкатегориям для поиска объекта
         for (const [categoryName, categoryDetails] of Object.entries(
-          data[0].categories.ru
+          data[0].categories[langToggle]
         )) {
           if (categoryDetails.subCategories) {
             for (const [subCategoryName, subCategoryDetails] of Object.entries(
@@ -216,8 +303,57 @@ const objectClick = async () => {
                 if (object.name === name && object.cod === cod) {
                   objName.textContent = object.name + " " + object.cod;
                   objDescripcion.textContent = object.description;
-                  objSubCategory.textContent = subCategoryName;
-                  // Здесь вы можете вывести и другие характеристики объекта
+                  objSubCategory.textContent =
+                    categoryName + " > " + subCategoryName;
+                  //----------------
+                  // // Сначала выбираем все слайды с классом .object-slide
+                  // const objSlide = document.querySelectorAll(".object-slide");
+
+                  // // Теперь выбираем все мини-слайды с классом .object-slide_mini
+                  // const objSlideMini =
+                  //   document.querySelectorAll(".object-slide_mini");
+
+                  // // Проверяем, существует ли объект и его массив photo
+                  // if (object && Array.isArray(object.photo)) {
+                  //   const photoUrls = []; // Создаем массив для хранения URL изображений
+
+                  //   // Заполняем массив photoUrls из данных объекта
+                  //   for (let i = 0; i < object.photo.length; i++) {
+                  //     photoUrls.push(object.photo[i]);
+                  //   }
+
+                  //   // Обновляем содержимое слайдов из photoUrls для основных слайдов
+                  //   objSlide.forEach((item, index) => {
+                  //     // Проверяем, существует ли соответствующий URL для текущего слайда
+                  //     if (index < photoUrls.length) {
+                  //       // Находим img внутри текущего слайда и обновляем его src
+                  //       const img = item.querySelector("img"); // Находим изображение внутри слайда
+                  //       if (img) {
+                  //         img.src = photoUrls[index]; // Обновляем ссылку на изображение
+                  //       } else {
+                  //         // Если изображения нет, создаем его
+                  //         item.innerHTML = `<img src="${photoUrls[index]}"/>`;
+                  //       }
+                  //     }
+                  //   });
+
+                  //   // Обновляем содержимое слайдов из photoUrls для мини-слайдов
+                  //   objSlideMini.forEach((item, index) => {
+                  //     // Проверяем, существует ли соответствующий URL для текущего мини-слайда
+                  //     if (index < photoUrls.length) {
+                  //       // Находим img внутри текущего мини-слайда и обновляем его src
+                  //       const img = item.querySelector("img"); // Находим изображение внутри мини-слайда
+                  //       if (img) {
+                  //         img.src = photoUrls[index]; // Обновляем ссылку на изображение
+                  //       } else {
+                  //         // Если изображения нет, создаем его
+                  //         item.innerHTML = `<img src="${photoUrls[index]}"/>`;
+                  //       }
+                  //     }
+                  //   });
+                  // }
+                  updateSlides(object);
+                  //----------------
                 }
               }
             }
@@ -353,23 +489,21 @@ const search = () => {
     results.forEach((item) => {
       const resultItem = document.createElement("div");
 
-      console.log(results);
-
       resultItem.classList.add("result-item");
 
       resultItem.innerHTML = `
-				<div class="search-photo">
-					<img src="${item.photo[0]}" alt="${item.name}">
-					
-				</div>
-				<div class="search-item">
-					<h1>${item.name}</h1>
-					<h2>${item.cod}</h2>
-					<h3>${item.filter[0] ? item.filter[0] : ""}</h3>
-				</div>
-			`;
-
+					<div class="search-photo">
+						<img src="${item.photo[0]}" alt="${item.name}">
+						
+					</div>
+					<div class="search-item">
+						<h1>${item.name}</h1>
+						<h2>${item.cod}</h2>
+						<h3>${item.filter[0] ? item.filter[0] : ""}</h3>
+					</div>
+				`;
       resultsContainer.appendChild(resultItem);
+      // }
     });
   };
 
@@ -392,3 +526,25 @@ const search = () => {
 };
 search();
 //////////////////////-----------SEARCH------------/////////////////////////////////
+///////////////////////---------LANG-SWICH--------///////////////////////////////////
+
+const langSwitch = document.querySelectorAll(".lang-switch");
+let langToggle = "ru";
+langSwitch.forEach((item) => {
+  item.addEventListener("click", () => {
+    const langValue = item.value;
+
+    if (langValue === "ru") {
+      langToggle = "ru";
+    } else {
+      langToggle = "en";
+    }
+
+    // Обновляем меню с новым языком
+    createListMenu(langToggle);
+    createLeftMenu(langToggle);
+    // objectClick(langToggle);
+  });
+});
+
+///////////////////////---------LANG-SWICH--------///////////////////////////////////

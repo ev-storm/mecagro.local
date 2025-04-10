@@ -42,13 +42,13 @@
 										<img src="../assets/img/1.png" />
 									</div>
 									<div class="swiper-slide object-slide">
-										<img src="../assets/img/1.png" />
+										<img  src="../assets/img/2.png" />
 									</div>
 									<div class="swiper-slide object-slide">
-										<img src="../assets/img/1.png" />
+										<img src="../assets/img/3.png" />
 									</div>
 									<div class="swiper-slide object-slide">
-										<img src="../assets/img/1.png" />
+										<img src="../assets/img/4.png" />
 								</div>
 								</div>
 								<div class="swiper-button-next"></div>
@@ -60,13 +60,13 @@
 										<img src="../assets/img/1.png" />
 									</div>
 									<div class="swiper-slide object-slide_mini">
-										<img src="../assets/img/1.png" />
+										<img src="../assets/img/2.png" />
 									</div>
 									<div class="swiper-slide object-slide_mini">
-										<img src="../assets/img/1.png" />
+										<img src="../assets/img/3.png" />
 								</div>
 								<div class="swiper-slide object-slide_mini">
-										<img src="../assets/img/1.png" />
+										<img src="../assets/img/4.png" />
 								</div>
 								</div>
 							</div>

@@ -27,8 +27,8 @@
                     "/assets/img/1.png",
                     "/assets/img/2.png",
                     "/assets/img/3.png",
-                    "/assets/img/4.png",
-                    "/assets/img/5.png"
+                    "/assets/img/1.png",
+                    "/assets/img/2.png"
                   ]
                 },
                 {
@@ -46,11 +46,11 @@
                     "Пневматическая сеялка для сада",
                     "Сеялка для моркови"
                   ],
-                  "brand": ["MECARGO", "BARGAM", "MOSH"],
+                  "brand": ["MECARGO", "BARGAM"],
                   "filter": ["Новинка", "Популярное"],
                   "photo": [
-                    "/assets/img/1.png",
-                    "/assets/img/2.png",
+                    "/assets/img/5.png",
+                    "/assets/img/4.png",
                     "/assets/img/3.png",
                     "/assets/img/4.png",
                     "/assets/img/5.png"
