@@ -1,49 +1,59 @@
-
 function totalSvg() {
+  const paths = document.querySelectorAll("svg path");
+  const btns = document.querySelectorAll(".btn-svg");
 
-	let paths = document.querySelectorAll('.btn-svg > .svg-con > svg > path');
+  paths.forEach(function (path) {
+    let len = Math.round(path.getTotalLength());
 
-	let lengths = [];
+    // Устанавливаем начальный цвет обводки
+    path.style.stroke = "#58C88A";
+    path.setAttribute("stroke-dasharray", len);
+    path.setAttribute("stroke-dashoffset", len);
 
+    // Добавляем анимацию для проигрывания один раз
+    const animate = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "animate"
+    );
+    animate.setAttribute("attributeName", "stroke-dashoffset");
+    animate.setAttribute("values", `${len}; 0`);
+    animate.setAttribute("dur", `${len / 100}`);
+    animate.setAttribute("fill", "freeze");
 
-	paths.forEach(function(path) {
+    path.appendChild(animate);
+    animate.beginElement();
+  });
 
-			let len = Math.round(path.getTotalLength());
+  btns.forEach((btn) => {
+    btn.addEventListener("mouseenter", function () {
+      const path = this.querySelector("svg > path");
 
+      // Меняем цвет обводки на белый при наведении
+      path.style.stroke = "#fff";
 
-			path.setAttribute('stroke-dasharray', len);
-			path.setAttribute('stroke-dashoffset', len); 
+      let len = Math.round(path.getTotalLength());
 
+      const animate = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "animate"
+      );
+      animate.setAttribute("attributeName", "stroke-dashoffset");
+      animate.setAttribute("values", `${len}; 0`);
+      animate.setAttribute("dur", `${len / 100}`);
+      animate.setAttribute("fill", "freeze");
 
-			lengths.push(len);
-	});
+      path.appendChild(animate);
+      animate.beginElement();
+    });
 
+    btn.addEventListener("mouseleave", function () {
+      const path = this.querySelector("svg > path");
 
-	const btns = document.querySelectorAll('.btn-svg');
-
-	btns.forEach(btn => {
-			btn.addEventListener('mouseenter', function () {
-
-					const path = this.querySelector('svg > path');
-
-					let len = Math.round(path.getTotalLength());
-
-
-					const animate = document.createElementNS("http://www.w3.org/2000/svg", "animate");
-					animate.setAttribute("attributeName", "stroke-dashoffset");
-					animate.setAttribute("values", `${len}; 0`);
-					animate.setAttribute("dur", `${len / 100}`);
-					animate.setAttribute("fill", "freeze");
-
-					path.appendChild(animate);
-					animate.beginElement();
-			});
-
-
-			btn.dispatchEvent(new Event('mouseenter'));
-	});
+      // Возвращаем цвет обводки к исходному при уходе мыши
+      path.style.stroke = "#58C88A";
+    });
+  });
 }
 
-document.addEventListener('DOMContentLoaded', totalSvg);
-
-
+// Вызываем totalSvg при загрузке страницы
+document.addEventListener("DOMContentLoaded", totalSvg);

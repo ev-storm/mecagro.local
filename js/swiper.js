@@ -19,6 +19,55 @@ var objectSwiperMini = new Swiper(".object-swiper_mini", {
   watchSlidesProgress: true,
 });
 
+const progressCircle = document.querySelector(".autoplay-progress svg");
+const progressContent = document.querySelector(".autoplay-progress span");
+
+var titleSwiper = new Swiper(".title-swiper", {
+  loop: true,
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  on: {
+    autoplayTimeLeft(s, time, progress) {
+      progressCircle.style.setProperty("--progress", 1 - progress);
+      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    },
+  },
+});
+
+// Инициализация Swiper
+var linkSwiper = new Swiper(".linkSwiper", {
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  centeredSlides: true,
+});
+
+// Получаем элементы стрелок
+var leftArrow = document.querySelector(".title-arow-L");
+var rightArrow = document.querySelector(".title-arow-R");
+
+// Добавляем обработчики событий для левой стрелки
+leftArrow.addEventListener("click", function () {
+  linkSwiper.slidePrev(); // Переход к предыдущему слайду
+});
+
+// Добавляем обработчики событий для правой стрелки
+rightArrow.addEventListener("click", function () {
+  linkSwiper.slideNext(); // Переход к следующему слайду
+});
+
 // var swiperBrend = new Swiper(".swiper-brend", {
 //   slidesPerView: 5,
 //   loop: true,

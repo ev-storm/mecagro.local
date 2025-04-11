@@ -30,6 +30,19 @@
 					</ul>
 					<div class="categories-margin"></div>
 					<ul class="main-categories">
+						 <!-- <li>
+							<h2 class="open-img">categoryNam</h2>
+							<ul class="main-sub_categories main-items close">
+								<li>
+                  <h2 class="open-img">subCategoryName</h2>
+                  <ul class="main-items close">
+										<li class="object-item object-click">
+											<h2 class="obj-btn">object.name</h2>
+										</li>
+									</ul>
+                </li>
+							</ul>
+						</li> -->
 					</ul>
 			</div>
 			<div class="object-con">

@@ -31,7 +31,7 @@
 }
 .object-prevue.hide {
   opacity: 0;
-  transition: var(--tran-01);
+  transition: 0s;
   transform: translateX(-30px);
 }
 
@@ -301,12 +301,13 @@
   min-width: 300px;
 }
 .object-item.active {
+  border-color: var(--main) !important;
+}
+.object-item.active h2 {
   color: var(--main);
-  border-color: var(--main);
 }
 .object-item:hover {
-  color: var(--main);
-  border-color: var(--main);
+  border-color: transparent;
 }
 
 .main-items,
