@@ -1,9 +1,12 @@
 //////////////////////-----------INPUT_OUTLINE------------//////////////////////////////
-const input = document.querySelector("input");
+const input = document.querySelectorAll("input");
 
-input.addEventListener("focus", (event) => {
-  event.target.style.outline = "none";
+input.forEach((item) => {
+  item.addEventListener("focus", (event) => {
+    event.target.style.outline = "none";
+  });
 });
+
 //////////////////////-----------INPUT_OUTLINE------------/////////////////////////////////
 
 //////////////////////-----------TIP_STATUS------------/////////////////////////////////
@@ -199,3 +202,37 @@ const langSwitchActive = () => {
 // Вызываем функцию для инициализации
 langSwitchActive();
 //////////////////////--------LANG-SWITCH--------//////////////////////////////
+
+//////////////////////--------ANIM_LEFT-------//////////////////////////////
+window.addEventListener("scroll", function () {
+  const elements = document.querySelectorAll(".anim-left");
+  elements.forEach(function (element) {
+    const rect = element.getBoundingClientRect();
+
+    // Проверяем, находится ли элемент в пределах окна просмотра
+    if (rect.top < window.innerHeight && rect.bottom > 10) {
+      setTimeout(function () {
+        element.classList.add("show");
+      }, 300);
+    } else {
+      element.classList.remove("show");
+    }
+  });
+});
+
+window.addEventListener("scroll", function () {
+  const elements = document.querySelectorAll(".anim-up");
+  elements.forEach(function (element) {
+    const rect = element.getBoundingClientRect();
+
+    // Проверяем, находится ли элемент в пределах окна просмотра
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setTimeout(function () {
+        element.classList.add("show");
+      }, 300);
+    } else {
+      element.classList.remove("show");
+    }
+  });
+});
+//////////////////////--------ANIM_LEFT-------//////////////////////////////

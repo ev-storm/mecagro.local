@@ -448,7 +448,7 @@
   line-height: 1;
   transition: var(--tran-03);
 }
-.search-item h1:hover {
+.search-item:hover h1 {
   color: var(--main);
 }
 .search-item h2 {

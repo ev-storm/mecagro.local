@@ -10,6 +10,7 @@
 @import url("obj.css");
 @import url("catalog.css");
 @import url("swiper.css");
+@import url("news.css");
 
 :root {
   --title: 65px;
@@ -128,6 +129,7 @@ body {
   width: 100%;
   max-width: 2000px;
   height: fit-content;
+  overflow: hidden;
 }
 h1 {
   font-family: "Montserrat";

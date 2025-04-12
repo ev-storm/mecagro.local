@@ -24,11 +24,11 @@
                   "brand": ["MECARGO", "BARGAM", "MOSH"],
                   "filter": ["Новинка", "Популярное"],
                   "photo": [
-                    "/assets/img/1.png",
-                    "/assets/img/2.png",
-                    "/assets/img/3.png",
-                    "/assets/img/1.png",
-                    "/assets/img/2.png"
+                    "/assets/img/avto/1.png",
+                    "/assets/img/avto/2.png",
+                    "/assets/img/avto/3.png",
+                    "/assets/img/avto/4.png",
+                    "/assets/img/avto/5.png"
                   ]
                 },
                 {
@@ -49,11 +49,11 @@
                   "brand": ["MECARGO", "BARGAM"],
                   "filter": ["Новинка", "Популярное"],
                   "photo": [
-                    "/assets/img/5.png",
-                    "/assets/img/4.png",
-                    "/assets/img/3.png",
-                    "/assets/img/4.png",
-                    "/assets/img/5.png"
+                    "/assets/img/avto/1.png",
+                    "/assets/img/avto/2.png",
+                    "/assets/img/avto/3.png",
+                    "/assets/img/avto/4.png",
+                    "/assets/img/avto/5.png"
                   ]
                 }
               ]
@@ -78,11 +78,11 @@
                   "brand": ["MECARGO", "BARGAM", "MOSH"],
                   "filter": ["Новинка", "Популярное"],
                   "photo": [
-                    "/assets/img/1.png",
-                    "/assets/img/2.png",
-                    "/assets/img/3.png",
-                    "/assets/img/1.png",
-                    "/assets/img/2.png"
+                    "/assets/img/avto/1.png",
+                    "/assets/img/avto/2.png",
+                    "/assets/img/avto/3.png",
+                    "/assets/img/avto/4.png",
+                    "/assets/img/avto/5.png"
                   ]
                 },
                 {
@@ -103,11 +103,10 @@
                   "brand": ["MECARGO", "BARGAM"],
                   "filter": ["Новинка", "Популярное"],
                   "photo": [
-                    "/assets/img/5.png",
-                    "/assets/img/4.png",
-                    "/assets/img/3.png",
-                    "/assets/img/4.png",
-                    "/assets/img/5.png"
+                    "/assets/img/avto/6.png",
+                    "/assets/img/avto/7.png",
+                    "/assets/img/avto/8.png",
+                    "/assets/img/avto/9.png"
                   ]
                 }
               ]

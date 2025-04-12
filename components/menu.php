@@ -5,9 +5,9 @@
 		<div class="menu-con">
 			<div class="menu">
 				<ul class="menu-ul">
-					<li><a href="#">Главная</a></li>
+					<li><a href="/" class="home-btn">Главная</a></li>
 					<li>|</li>
-					<li class="about-btn-li"><a href="#" class="about-btn">О компании</a>
+					<li class="about-btn-li"><a href="/pages/about.php" class="about-btn">О компании</a>
 						<ul class="sub-about-btn">
 							<li><a class="icon-menu icon-menu_1" href="#">Контакты</a></li>
 							<li><a class="icon-menu icon-menu_2" href="#">Реквизиты</a></li>

@@ -158,10 +158,12 @@ const setupToggleCategories = () => {
 /////////////////////------LEFT_MENU_ANIMATED--------////////////////////////////
 
 ///////////////////////---------MENU--------///////////////////////////////////
-const createListMenu = async (activeBrands = ["MECARGO", "BARGAM", "MOSH"]) => {
+const createListMenu = async (activeBrands) => {
   const dataCategoriesMenu = await fetchDataCategories();
   const menuContainer = document.querySelector(".menu-categories");
   menuContainer.innerHTML = "";
+
+  activeBrands = ["MECARGO", "BARGAM", "MOSH"];
 
   let menuHTML = "";
 
@@ -486,7 +488,7 @@ search();
 ///////////////////////---------LANG-SWICH--------///////////////////////////////////
 
 const langSwitch = document.querySelectorAll(".lang-switch");
-let langToggle = "ru";
+langToggle = "ru";
 langSwitch.forEach((item) => {
   item.addEventListener("click", () => {
     const langValue = item.value;

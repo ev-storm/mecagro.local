@@ -2,7 +2,7 @@
 	<?php include "components/head.php"?>
 
 	<style>
-			.menu-ul li:nth-child(1) a{
+			.home-btn{
 				color: #58c88a!important;
 			}
 	</style>
@@ -25,7 +25,7 @@
 								<h2>Новинка от компании “MecAgro” в мире агротехнологий. Предназначен для защиты от вредителей и болезней садов и виноградников высотой до 5 метров и шириной междурядий до 6 метров.</h2>
 								<button class="btn">Побробнее</button>							
 							</div>
-							<img src="../assets/img/1.png" />
+							<img src="/assets/img/avto/1.png" />
 						</div>
 						<div class="swiper-slide title-slide">
 							<div class="slide-text">
@@ -34,7 +34,7 @@
 								<h2>Новинка от компании “MecAgro” в мире агротехнологий. Предназначен для защиты от вредителей и болезней садов и виноградников высотой до 5 метров и шириной междурядий до 6 метров.</h2>
 								<button class="btn">Побробнее</button>							
 							</div>
-							<img src="../assets/img/1.png" />
+							<img src="/assets/img/avto/5.png" />
 						</div>
 						<div class="swiper-slide title-slide">
 							<div class="slide-text">
@@ -43,7 +43,7 @@
 								<h2>Новинка от компании “MecAgro” в мире агротехнологий. Предназначен для защиты от вредителей и болезней садов и виноградников высотой до 5 метров и шириной междурядий до 6 метров.</h2>
 								<button class="btn">Побробнее</button>							
 							</div>
-							<img src="../assets/img/1.png" />
+							<img src="/assets/img/avto/2.png" />
 						</div>
 						<div class="swiper-slide title-slide">
 							<div class="slide-text">
@@ -52,7 +52,7 @@
 								<h2>Новинка от компании “MecAgro” в мире агротехнологий. Предназначен для защиты от вредителей и болезней садов и виноградников высотой до 5 метров и шириной междурядий до 6 метров.</h2>
 								<button class="btn">Побробнее</button>							
 							</div>
-							<img src="../assets/img/1.png" />
+							<img src="/assets/img/avto/3.png" />
 						</div>
 					</div>
 					<div class="swiper-button-next"></div>
@@ -115,7 +115,7 @@
 
 		</div>
 
-		<div class="main-description-con">
+		<div class="anim-left main-description-con">
 			<div class="main-description">
 				<h1>ООО «МЕКАГРО ГРУП» - официальный дилер компаний MECAGRO, TIERRE, BERTOLINI и ARAG на территории России и стран СНГ</h1>
 				<h2>Для вас мы готовы предоставить новинки в мире аготехнологий. Компании MECAGRO, TIERRE, BERTOLINI и ARAG закрывают все потребности в технике для агрохолдингов. Все модели доступны на нашем складе в России. 
@@ -164,8 +164,67 @@
 			</div>
 		</div>
 
+		<?php include "components/news.php"?>
 
+		<div class="anim-left partners-con">
+			<div class="partners-title">
+				<div>
+					<h1 class="title-heading">
+						Наши партнёры
+					</h1>
+				</div>
+				<div class="partners-description">
+					<h2>ООО «МЕКАГРО ГРУП» является официальным дилером компаний:<br>
+					<span>MECAGRO, TIERRE, BERTOLINI, ARAG.</span>
+					</h2>
+				</div>
+			</div>
+		</div>
 
+		<div class="swiper brendMainSwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div class="anim-left main-form-con">
+			<div class="main-form-description">
+				<h1>Получите коммерческое предложение</h1>
+				<h2>Оставьте заявку, и получите наше коммерческое предложение с актуальными услугами и  ценами. Узнайте все подробности.
+				</h2>
+			</div>
+			<div class="main-form">
+				<form action="#">
+					<input class="btn" type="text" placeholder="Имя *" require>
+					<input class="btn" type="tel" placeholder="Номер телефона *" require>
+					<input class="btn" type="mail" placeholder="E-mail">
+					<div class="main-form-btn">
+						<button class="btn">Отправить</button>
+						<button class="btn-light">Менеджер</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+
+		<?php include "components/footer.php"?>
 	</div>
 
 

@@ -1,12 +1,131 @@
 .footer-con {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  padding: 3% 10% 3% 10%;
-  background: var(--black);
+  padding: 3% 5% 1% 5%;
+  background-image: url(/assets/img/foot-back.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.foot-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.foot-menu-item li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  transition: var(--tran-01);
+}
+.foot-menu-item li a:hover {
+  font-weight: 500;
 }
 .menu-footer {
+  display: flex;
+  align-items: start;
+}
+.foot-margin {
+  width: 2px;
+  height: 150px;
+  background: #ffffff20;
+  margin: 0 20px;
+}
+.about-foot {
+  margin-top: 40px;
+}
+.about-foot h2 {
+  color: #fff;
+  font-size: 14px;
+}
+.about-foot h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+}
+.foot-contact h1 {
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}
+/* .foot-contact div{
+	margin-top: 25px;
+} */
+.foot-contact h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 20px 0 5px 0;
+}
+.foot-contact h3 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+}
+.foot-input {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin: 20px 0;
+}
+.foot-input input {
+  background: #b1cec6;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+.foot-input button {
+  background: #fff;
+  color: var(--dark);
+  font-weight: 500;
+  margin: 0;
+}
+.foot-input input:hover {
+  background: #b1cec6;
+  color: #fff;
+  color: var(--dark);
+}
+.foot-input input:active {
+  scale: 1;
+}
+
+.foot-input input::placeholder {
+  color: var(--dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+.foot-link_con {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.foot-link_con h2 {
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}
+.menu-footer {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+.foot-link a {
+  margin: 0 10px;
+}
+.foot-link a img {
+  width: 30px;
+  transition: var(--tran-03);
+}
+.foot-link a:hover img {
+  scale: 0.9;
+  opacity: 0.5;
+}
+/* .menu-footer {
   display: flex;
   justify-content: start;
   width: 30%;
@@ -165,4 +284,4 @@
 .contact-up:hover {
   scale: 0.9;
   transition: var(--tran-05);
-}
+} */
