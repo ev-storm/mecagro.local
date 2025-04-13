@@ -316,12 +316,21 @@
   background: #fff;
   color: var(--black);
 }
-
-.menu-categories li:hover {
+.menu-categories.show li {
+  transition: var(--tran-03);
+}
+.menu-categories.show li:hover {
   background: var(--main);
+}
+.menu-items li:hover .menu-obj-text {
   color: #fff;
 }
-
+.menu-sub_categories li:hover .menu-sub_categories-text {
+  color: #fff;
+}
+.menu-categories.show li:hover .menu-categories-text {
+  color: #fff;
+}
 .menu-categories {
   position: absolute;
   top: 100%;

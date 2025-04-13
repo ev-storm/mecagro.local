@@ -1,20 +1,33 @@
-		<div class="block_7">
-		
-				<h1 class="name">Наши клиенты и партнёры
-					<div></div>
-				</h1>
-				
-
-
-				<div class="swiper swiper-brend">
-					<div class="swiper-wrapper brend-wrapper">
-						<div class="swiper-slide brend-slide"> <img src="/assets/svg/brend/1.svg" alt=""></div>
-						<div class="swiper-slide brend-slide"> <img src="/assets/svg/brend/2.svg" alt=""></div>
-						<div class="swiper-slide brend-slide"> <img src="/assets/svg/brend/3.svg" alt=""></div>
-						<div class="swiper-slide brend-slide"> <img src="/assets/svg/brend/4.svg" alt=""></div>
-						<div class="swiper-slide brend-slide"> <img src="/assets/svg/brend/5.svg" alt=""></div>
-						<div class="swiper-slide brend-slide"> <img src="/assets/svg/brend/6.svg" alt=""></div>
-					</div>
+		<div class="anim-left partners-con">
+			<div class="partners-title">
+				<div class="title-heading-con">
+					<h1 class="anim-left title-heading">Наши партнёры</h1>
+					<h2>ООО «МЕКАГРО ГРУП» является официальным дилером компаний:<br>
+						<span>MECAGRO, TIERRE, BERTOLINI, ARAG.</span>
+					</h2>
 				</div>
+			</div>
+		</div>
 
+		<div class="swiper brendMainSwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+				<div class="swiper-slide brend-slide">
+					<img src="/assets/svg/brend/1.svg" alt="">
+				</div>
+			</div>
 		</div>

@@ -31,7 +31,7 @@
 					<div class="categories-margin"></div>
 					<ul class="main-categories">
 						 <!-- <li>
-							<h2 class="open-img">categoryNam</h2>
+							<h2 class="open-img">categoryName</h2>
 							<ul class="main-sub_categories main-items close">
 								<li>
                   <h2 class="open-img">subCategoryName</h2>
@@ -89,7 +89,12 @@
 								<button class="btn">Получить консультацию</button>
 								<button class="btn-light">Лизинг</button>
 							</div>
-								<button class="btn-light pdf-down pdf-green">Скачать каталог	
+								<button class="btn-light download-cat pdf-down pdf-green">Скачать каталог
+									<ul>
+										<li><a target="_blanc" href="/assets/img/brend/Mecagro.pdf"><h2>MECARGO PDF</h2></a></li>
+										<li><a target="_blanc" href="/assets/img/brend/BARGAM.pdf"><h2>BARGAM PDF</h2></a></li>
+										<li><a target="_blanc" href="/assets/img/brend/Mosh.pdf"><h2>MOSH PDF</h2></a></li>
+									</ul>
 								</button>
 						</div>
 					</div>
@@ -138,33 +143,27 @@
 						<table class="object-specifications_table">
 							<tr class="object-specifications_table-title">
 									<th><h1>наименование характеристики</h1></th>
-									<th><h1>количество</h1></th>
-									<th><h1>Ед. изм.</h1></th>
+									<th><h1>количество | Ед. изм.</h1></th>
 							</tr>
 							<tr>
 									<td><h1>Вместимость бака</h1></td>
-									<td><h1>1,0 / 1,5 / 2,0</h1></td>
-									<td><h1>м3</h1></td>
+									<td><h1>1,0 / 1,5 / 2,0 м3</h1></td>
 							</tr>
 							<tr>
 									<td><h1>Расход рабочей жидкости</h1></td>
-									<td><h1>200 – 1000 </h1></td>
-									<td><h1>л/га</h1></td>
+									<td><h1>200 – 1000 л/га</h1></td>
 							</tr>
 							<tr>
 									<td><h1>Транспортная скорость</h1></td>
-									<td><h1>20</h1></td>
-									<td><h1>км/ч</h1></td>
+									<td><h1>20 км/ч</h1></td>
 							</tr>
 							<tr>
 									<td><h1>Число обслуживающего персонала</h1></td>
-									<td><h1>1</h1></td>
-									<td><h1>чел</h1></td>
+									<td><h1>1 чел</h1></td>
 							</tr>
 							<tr>
 									<td><h1>Масса машины сухая, не более</h1></td>
-									<td><h1>600 / 800 / 900</h1></td>
-									<td><h1>кг</h1></td>
+									<td><h1>600 / 800 / 900 кг</h1></td>
 							</tr>
 							
 					</table>

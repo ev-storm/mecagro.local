@@ -9,22 +9,22 @@
 					<li>|</li>
 					<li class="about-btn-li"><a href="/pages/about.php" class="about-btn">О компании</a>
 						<ul class="sub-about-btn">
-							<li><a class="icon-menu icon-menu_1" href="#">Контакты</a></li>
-							<li><a class="icon-menu icon-menu_2" href="#">Реквизиты</a></li>
-							<li><a class="icon-menu icon-menu_3" href="#">Доставка</a></li>
-							<li><a class="icon-menu icon-menu_4" href="#">Новости</a></li>
-							<li><a class="icon-menu icon-menu_5" href="#">Партнеры</a></li>
-							<li><a class="icon-menu icon-menu_6" href="#">Сертификаты</a></li>
-							<li><a class="icon-menu icon-menu_7" href="#">Вакансии</a></li>
-							<li><a class="icon-menu icon-menu_8" href="#">Политика <br> конфидециальности</a></li>
+							<li><a class="icon-menu icon-menu_1" href="/pages/about.php#contact">Контакты</a></li>
+							<li><a class="icon-menu icon-menu_2" href="/pages/about.php#recvisit">Реквизиты</a></li>
+							<li><a class="icon-menu icon-menu_3" href="/pages/about.php#delivry">Доставка</a></li>
+							<li><a class="icon-menu icon-menu_4" href="/pages/about.php#news">Новости</a></li>
+							<li><a class="icon-menu icon-menu_5" href="/pages/about.php#part">Партнеры</a></li>
+							<li><a class="icon-menu icon-menu_6" href="/pages/about.php#serty">Сертификаты</a></li>
+							<li><a class="icon-menu icon-menu_7" href="/pages/about.php#contact">Вакансии</a></li>
+							<li><a class="icon-menu icon-menu_8" href="/pages/about.php#policy">Политика <br> конфидециальности</a></li>
 						</ul>
 					</li>
 					<li>|</li>
-					<li><a href="#">Контакты</a></li>
+					<li><a href="/pages/about.php#contact">Контакты</a></li>
 					<li>|</li>
-					<li><a href="#">Доставка</a></li>
+					<li><a href="/pages/about.php#delivry">Доставка</a></li>
 					<li>|</li>
-					<li><a href="#">Новости</a></li>
+					<li><a href="/pages/about.php#news">Новости</a></li>
 				</ul>
 				<div class="link-con">
 					<button class="btn btn-modal-call">Связаться</button>

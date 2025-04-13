@@ -117,15 +117,6 @@
   opacity: 0;
   transition: 0s;
 }
-#readMoreBtn {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  border-style: none;
-  color: var(--main);
-  background: transparent;
-  font-size: 14px;
-  cursor: pointer;
-}
 
 .green-line {
   width: 4px;
@@ -354,9 +345,6 @@
   flex-direction: column;
   align-items: start;
 }
-/* .main-items.open {
-  color: var(--main);
-} */
 
 .open-img.active {
   color: var(--main);
@@ -372,4 +360,38 @@
 }
 .open-img.active::before {
   rotate: 90deg;
+}
+.download-cat {
+  position: relative;
+  z-index: 9999;
+  transition: var(--tran-03);
+}
+.download-cat:hover ul {
+  max-height: 100%;
+  height: 100%;
+  opacity: 1;
+}
+.download-cat ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 50%;
+  height: 100%;
+  position: absolute;
+  bottom: 100%;
+  opacity: 0;
+  left: 0;
+  border-radius: 10px 10px 0 0;
+  transition: var(--tran-03);
+}
+.download-cat ul li {
+  background: #dbdbdb;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  margin: 1px 0;
+  transition: var(--tran-03);
+}
+.download-cat ul li:hover {
+  background: #c9c9c9;
 }

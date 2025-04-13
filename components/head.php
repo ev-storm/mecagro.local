@@ -9,6 +9,7 @@
 	<!------------------- JS -------------------------->
 	<script defer src="/js/main.js"></script>
 	<script defer src="/js/obj.js"></script>
+	<script defer src="/js/copy.js"></script>
 	<script defer src="/js/svg.js"></script>
 	<script defer src="/js/swiper.js"></script>
 	<script defer src="/js/catalog.js"></script>

@@ -1,0 +1,171 @@
+[
+  {
+    "categories": {
+      "ru": {
+        "Техника для садоводства": {
+          "subCategories": {
+            "Садовые тракторы и культиваторы": {
+              "object": [
+                {
+                  "name": "Пerewgкукрgergуг",
+                  "cod": "PG300",
+                  "description": "Для вспашки земель, подготовки почвы к посеву",
+                  "specifications": {
+                    "площадь": "1 - 3 га/ч",
+                    "Рабочая скорость движения": "3 - 6 км/ч"
+                  },
+                  "subCategories": [
+                    "Сажалка для рассады",
+                    "Сеялка для овощей",
+                    "Автоматическая сажалка",
+                    "Пневматическая сеялка для сада",
+                    "Сеялка для моркови"
+                  ],
+                  "brand": ["MECARGO", "BARGAM", "MOSH"],
+                  "filter": ["Новинка", "Популярное"],
+                  "photo": [
+                    "/assets/img/avto/1.png",
+                    "/assets/img/avto/2.png",
+                    "/assets/img/avto/3.png",
+                    "/assets/img/avto/4.png",
+                    "/assets/img/avto/5.png"
+                  ]
+                },
+                {
+                  "name": "Плуг_2",
+                  "cod": "PG 300",
+                  "description": "Для вспашки земель, подготовки почвы к посеву",
+                  "specifications": {
+                    "площадь": "1 - 3 га/ч",
+                    "Рабочая скорость движения": "3 - 6 км/ч"
+                  },
+                  "subCategories": [
+                    "Сажалка для рассады",
+                    "Сеялка для овощей",
+                    "Автоматическая сажалка",
+                    "Пневматическая сеялка для сада",
+                    "Сеялка для моркови"
+                  ],
+                  "brand": ["MECARGO", "BARGAM"],
+                  "filter": ["Новинка", "Популярное"],
+                  "photo": [
+                    "/assets/img/avto/1.png",
+                    "/assets/img/avto/2.png",
+                    "/assets/img/avto/3.png",
+                    "/assets/img/avto/4.png",
+                    "/assets/img/avto/5.png"
+                  ]
+                }
+              ]
+            },
+            "Сеялки и сажалки для овощей": {
+              "object": [
+                {
+                  "name": "Плуг_3",
+                  "cod": "PG 300",
+                  "description": "Для вспашки земель, подготовки почвы к посеву",
+                  "specifications": {
+                    "площадь": "1 - 3 га/ч",
+                    "Рабочая скорость движения": "3 - 6 км/ч"
+                  },
+                  "subCategories": [
+                    "Сажалка для рассады",
+                    "Сеялка для овощей",
+                    "Автоматическая сажалка",
+                    "Пневматическая сеялка для сада",
+                    "Сеялка для моркови"
+                  ],
+                  "brand": ["MECARGO", "BARGAM", "MOSH"],
+                  "filter": ["Новинка", "Популярное"],
+                  "photo": [
+                    "/assets/img/avto/1.png",
+                    "/assets/img/avto/2.png",
+                    "/assets/img/avto/3.png",
+                    "/assets/img/avto/4.png",
+                    "/assets/img/avto/5.png"
+                  ]
+                },
+                {
+                  "name": "Плуг_4",
+                  "cod": "PG 300",
+                  "description": "Для вспашки земель, подготовки почвы к посеву",
+                  "specifications": {
+                    "площадь": "1 - 3 га/ч",
+                    "Рабочая скорость движения": "3 - 6 км/ч"
+                  },
+                  "subCategories": [
+                    "Сажалка для рассады",
+                    "Сеялка для овощей",
+                    "Автоматическая сажалка",
+                    "Пневматическая сеялка для сада",
+                    "Сеялка для моркови"
+                  ],
+                  "brand": ["MECARGO", "BARGAM"],
+                  "filter": ["Новинка", "Популярное"],
+                  "photo": [
+                    "/assets/img/avto/6.png",
+                    "/assets/img/avto/7.png",
+                    "/assets/img/avto/8.png",
+                    "/assets/img/avto/9.png"
+                  ]
+                }
+              ]
+            },
+            "Уборочная техника для ягод": {},
+            "Почвообрабатывающее оборудование для сада": {}
+          }
+        },
+        "Техника для виноградарства": {
+          "subCategories": {}
+        },
+        "Техника для животноводства": {
+          "subCategories": {}
+        }
+      },
+      "en": {
+        "Horticultural Equipment": {
+          "subCategories": {
+            "Garden Tractors and Cultivators": {
+              "object": [
+                {
+                  "name": "Plow",
+                  "cod": "PG 300",
+                  "description": "For plowing land, preparing soil for sowing",
+                  "specifications": {
+                    "area": "1 - 3 ha/h",
+                    "Working speed of movement": "3 - 6 km/h"
+                  },
+                  "subCategories": [
+                    "Seedling Planter",
+                    "Vegetable Seeder",
+                    "Automatic Planter",
+                    "Pneumatic Seeder for Gardens",
+                    "Carrot Planter"
+                  ],
+                  "brand": ["MECARGO", "BARGAM", "MOSH"],
+                  "filter": ["New", "Popular"],
+                  "photo": [
+                    "/assets/img/1.png",
+                    "/assets/img/2.png",
+                    "/assets/img/3.png",
+                    "/assets/img/4.png",
+                    "/assets/img/5.png"
+                  ]
+                }
+              ]
+            },
+            "Seeders and Planters for Vegetables": {},
+            "Harvesting Equipment for Berries": {},
+            "Soil Processing Equipment for Gardens": {}
+          }
+        },
+        "Grapevine Equipment": {
+          "subCategories": {}
+        },
+        "Livestock Equipment": {
+          "subCategories": {}
+        }
+      }
+    }
+  }
+]
