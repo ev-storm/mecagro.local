@@ -52,16 +52,16 @@
 							<div class="swiper object-swiper">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide object-slide">
-										<img src="../assets/img/1.png" />
+										<img src="../assets/img/avto/1.png" />
 									</div>
 									<div class="swiper-slide object-slide">
-										<img  src="../assets/img/2.png" />
+										<img src="../assets/img/avto/2.png" />
 									</div>
 									<div class="swiper-slide object-slide">
-										<img src="../assets/img/3.png" />
+										<img src="../assets/img/avto/3.png" />
 									</div>
 									<div class="swiper-slide object-slide">
-										<img src="../assets/img/4.png" />
+										<img src="../assets/img/avto/4.png" />
 								</div>
 								</div>
 								<div class="swiper-button-next"></div>
@@ -70,16 +70,16 @@
 							<div thumbsSlider="" class="swiper object-swiper_mini">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide object-slide_mini">
-										<img src="../assets/img/1.png" />
+										<img src="../assets/img/avto/1.png" />
 									</div>
 									<div class="swiper-slide object-slide_mini">
-										<img src="../assets/img/2.png" />
+										<img src="../assets/img/avto/2.png" />
 									</div>
 									<div class="swiper-slide object-slide_mini">
-										<img src="../assets/img/3.png" />
+										<img src="../assets/img/avto/3.png" />
 								</div>
 								<div class="swiper-slide object-slide_mini">
-										<img src="../assets/img/4.png" />
+										<img src="../assets/img/avto/4.png" />
 								</div>
 								</div>
 							</div>

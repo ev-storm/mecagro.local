@@ -47,8 +47,14 @@
 						<li>|</li>
 						<li><a href="#">Новинки</a></li>
 						<li>|</li>
-						<li><a href="#" class="pdf-down pdf-white">Скачать каталог</a></li>
+						<li class="pdf-down pdf-white"><a href="">Скачать каталог</a></li>
 					</ul>
+						<!-- <ul class="pdf-down-drop">
+							<li><a target="_blanc" href="/assets/img/brend/Mecagro.pdf"><h2>MECARGO PDF</h2></a></li>
+							<li><a target="_blanc" href="/assets/img/brend/BARGAM.pdf"><h2>BARGAM PDF</h2></a></li>
+							<li><a target="_blanc" href="/assets/img/brend/Mosh.pdf"><h2>MOSH PDF</h2></a></li>
+						</ul> -->
+					
 					<div class="sub-menu-comp">
 						<div class="search-container">
 							<input id="searchInput" class="search" type="text" placeholder="найти">

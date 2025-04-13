@@ -1,4 +1,4 @@
-// /////////////////////////----JSON------////////////////////////////////
+//////////////////////////----JSON------////////////////////////////////
 const jsonCategories = "../js/object.json";
 
 const fetchDataCategories = async () => {
@@ -15,44 +15,41 @@ const fetchDataCategories = async () => {
 // /////////////////////////----JSON------////////////////////////////////
 
 // /////////////////////////---- BREND ------////////////////////////////////
-// const activeBrend = async () => {
-//   const categoriesBrand = document.querySelectorAll(".categories-brand");
+const activeBrend = async () => {
+  const categoriesBrand = document.querySelectorAll(".categories-brand");
 
-//   categoriesBrand.forEach((item) => {
-//     item.addEventListener("click", () => {
-//       const isActive = item.classList.contains("active");
+  categoriesBrand.forEach((item) => {
+    item.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
 
-//       const activeCount = Array.from(categoriesBrand).filter((el) =>
-//         el.classList.contains("active")
-//       ).length;
+      const activeCount = Array.from(categoriesBrand).filter((el) =>
+        el.classList.contains("active")
+      ).length;
 
-//       if (isActive) {
-//         if (activeCount > 1) {
-//           item.classList.remove("active");
-//         }
-//       } else {
-//         item.classList.add("active");
-//       }
+      if (isActive) {
+        if (activeCount > 1) {
+          item.classList.remove("active");
+        }
+      } else {
+        item.classList.add("active");
+      }
 
-//       const activeBrands = Array.from(categoriesBrand)
-//         .filter((el) => el.classList.contains("active"))
-//         .map((el) => el.querySelector("h2").textContent);
+      const activeBrands = Array.from(categoriesBrand)
+        .filter((el) => el.classList.contains("active"))
+        .map((el) => el.querySelector("h2").textContent);
 
-//       if (activeBrands.length > 0) {
-//         const brandNames = activeBrands.join(", ");
-//         const tip = document.querySelector(".tip");
+      if (activeBrands.length > 0) {
+        const brandNames = activeBrands.join(", ");
+        const tip = document.querySelector(".tip");
 
-//         tip.classList.add("active");
-//         tip.innerHTML = `<h3>Задан фильтр по брендам:<br> ${brandNames}</h3>`;
+        tip.classList.add("active");
+        tip.innerHTML = `<h3>Задан фильтр по брендам:<br> ${brandNames}</h3>`;
+      }
+    });
+  });
+};
 
-//         createLeftMenu(activeBrands);
-//         createListMenu(activeBrands);
-//       }
-//     });
-//   });
-// };
-
-// activeBrend();
+activeBrend();
 // /////////////////////////---- BREND ------////////////////////////////////
 
 // ///////////////////////---------LEFT-MENU--------///////////////////////////////////
@@ -196,6 +193,7 @@ const expandActiveParents = (objectItems) => {
     console.warn("Активный элемент не найден.");
   }
 };
+
 ///////////////////////------LEFT_MENU_ANIMATED--------////////////////////////////
 
 /////////////////////////---------SYNS_MENU--------///////////////////////////////////
@@ -392,21 +390,9 @@ const objClick = async () => {
             }
           }
         }
-        return null; // Если ничего не нашли
-      };
-      const findsubCategory = (categories, text) => {
-        for (const category of Object.values(categories)) {
-          for (const subCategory of Object.values(category.subCategories)) {
-            return subCategory;
-          }
-        }
-        return null; // Если ничего не нашли
+        return null;
       };
 
-      const subCategory = findsubCategory(
-        data[0].categories[langToggle],
-        activeItemText.trim()
-      );
       const object = findObject(
         data[0].categories[langToggle],
         activeItemText.trim()
@@ -414,7 +400,7 @@ const objClick = async () => {
       if (object) {
         objName.textContent = object.name + " " + object.cod;
         objDescripcion.textContent = object.description;
-        objSubCategory.innerHTML = subCategory[0];
+        objSubCategory.innerHTML = category.subCategories;
       } else {
         console.log("Объект не найден");
       }
